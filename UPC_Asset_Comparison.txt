@@ -1,0 +1,4 @@
+select count(distinct a.asin) from backup_amazon_upc_11_12_2023 as a
+left join backup_amazon_upc_11_02_2023 as b
+on a.orig_upc=b.orig_upc and a.zip=b.zip
+where a.asin<>b.asin
